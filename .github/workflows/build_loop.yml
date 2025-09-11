@@ -257,7 +257,21 @@ jobs:
           token: ${{ secrets.GH_PAT }}
           submodules: recursive
           ref: ${{ env.TARGET_BRANCH }}
+  #-------------------------------------------------------------------begin inj.      
+      - name: Use my LibreTransmitter fork (override submodule commit)
+        run: |
+          # Zet de submodule remote naar jouw fork
+          git -C LibreTransmitter remote set-url origin https://github.com/rowlandje/LibreTransmitter.git
+          git -C LibreTransmitter fetch origin
 
+          # Kies hoe je checkout wilt doen:
+
+          # a) Altijd de laatste commit van de main branch van je fork
+          git -C LibreTransmitter checkout origin/main
+
+          # b) Of pin exact jouw commit (vervang <SHA> door je commit-ID)
+          # git -C LibreTransmitter checkout <SHA>
+#----------------------------------------------------------------------end inj. 
       # Customize Loop: Download and apply patches
       - name: Customize Loop
         run: |
