@@ -206,6 +206,7 @@ jobs:
           curl https://github.com/rowlandje/Loop/commit/eb126612be065c2d8b968d8baed7cf941d8488ec.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/9682c51aebeb12a32e88cb06d084bb031a13e25c.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/05b9dc4d49b14d9dff5923700d69a5f1c6668adb.patch | git apply --directory=Loop -v --whitespace=fix
+          curl https://github.com/rowlandje/Loop/commit/9b5eb09b7194fa9b66b160c6592482612343e8a7.patch | git apply --directory=Loop -v --whitespace=fix
           
           # Submodule LoopKit patches:
           # General template for customizing submodule LoopKit 
