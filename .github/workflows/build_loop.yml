@@ -209,6 +209,7 @@ jobs:
           curl https://github.com/rowlandje/Loop/commit/9b5eb09b7194fa9b66b160c6592482612343e8a7.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/7c9d99dfd76ca630b27a91c617e884ee0601439b.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/739b9565df99d3b401efb637111131a84f916af6.patch | git apply --directory=Loop -v --whitespace=fix
+          curl https://github.com/rowlandje/Loop/commit/9dd4038e5247b42e458e8a987950a731340b7ec2.patch | git apply --directory=Loop -v --whitespace=fix
 
 
           
