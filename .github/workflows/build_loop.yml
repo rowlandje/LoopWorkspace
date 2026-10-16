@@ -256,7 +256,23 @@ jobs:
 
       # Upload to TestFlight
       - name: Fastlane upload to TestFlight
-        run: bundle exec fastlane release
+        run: |
+          set +e
+
+          bundle exec fastlane release 2>&1 | tee /tmp/testflight-upload.log
+          FASTLANE_STATUS=${PIPESTATUS[0]}
+
+          set -e
+
+          if [ "$FASTLANE_STATUS" -ne 0 ]; then
+            if grep -q "UPLOAD SUCCEEDED with no errors" /tmp/testflight-upload.log && \
+               grep -q "received status code 500; internal server error" /tmp/testflight-upload.log; then
+              echo "::warning::TestFlight upload succeeded, but App Store Connect returned HTTP 500 afterwards."
+              exit 0
+            fi
+
+            exit "$FASTLANE_STATUS"
+          fi
         env:
           TEAMID: ${{ secrets.TEAMID }}
           GH_PAT: ${{ secrets.GH_PAT }}
