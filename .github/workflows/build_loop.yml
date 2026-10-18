@@ -213,7 +213,8 @@ jobs:
           curl https://github.com/rowlandje/Loop/commit/2b463174d9eb2e94f8544401663f595b30f9ca97.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/9b924c5c3b14863ba4cc4942c16cc8c9e9b41b8e.patch | git apply --directory=Loop -v --whitespace=fix
           curl https://github.com/rowlandje/Loop/commit/1f56e4918404c793a0816c2e6660088c492b74e0.patch | git apply --directory=Loop -v --whitespace=fix
-          
+          curl https://github.com/rowlandje/Loop/commit/984b185e2719279835e07586504661abba6a3215.patch | git apply --directory=Loop -v --whitespace=fix
+
           # Submodule LoopKit patches:
           # General template for customizing submodule LoopKit 
           # Copy url from a GitHub commit or pull request and insert below, and remove the "#" sign from the beginning of the line to activate:
